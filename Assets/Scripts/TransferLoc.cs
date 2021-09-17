@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class TransferLoc : MonoBehaviour
 {
-    private SpawnManager spawnManager;
+    public SpawnManager spawnManager;
     public GameObject Loc;
     // Start is called before the first frame update
     void Start()
@@ -23,15 +25,16 @@ public class TransferLoc : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Loc.SetActive(true);
+            spawnManager.CoutEnemy = Random.Range(1,5);
+            spawnManager.AllCout();
         }
     }
-
+    
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             Loc.SetActive(false);
-
         }
     }
 }
