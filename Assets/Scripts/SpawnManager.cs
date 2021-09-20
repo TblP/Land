@@ -12,16 +12,16 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] enemyOnMap;
     public Transform Loc;
     public Vector3 SpawnPos;
-    private Collider mesh;
+    public Collider mesh;
     public int CoutEnemy;
     public Vector3[] AllSpawnPos;
-
-    private bool check;
+    public GameObject[] well;
+    
     // Start is called before the first frame update
     void Start()
     {
-        CoutEnemy = Random.Range(1,5);
         mesh = GetComponent<MeshCollider>();
+        CoutEnemy = Random.Range(1,5);
         spawnpos();
         AllCout();
     }
@@ -35,10 +35,10 @@ public class SpawnManager : MonoBehaviour
     void spawnEnemy()
     {
         enemyOnMap = GameObject.FindGameObjectsWithTag("Enemy");
-        for (int b = 0; b <= AllSpawnPos.Length; b++)
+        for (int b = 0; b <= AllSpawnPos.Length-1; b++)
         {
             if (enemyOnMap.Length < CoutEnemy) {
-                int enemyIndex = Random.Range(0, enemyPrefabs.Length);
+                int enemyIndex = Random.Range(0, enemyPrefabs.Length-1);
                 Instantiate(enemyPrefabs[enemyIndex], AllSpawnPos[b], enemyPrefabs[enemyIndex].transform.rotation).transform.SetParent(Loc);
             }
         }
@@ -48,20 +48,22 @@ public class SpawnManager : MonoBehaviour
 
     void spawnpos()
     {
+        Debug.Log(mesh.bounds);
         SpawnPos = new Vector3(Random.Range(mesh.bounds.min.x + 20, mesh.bounds.max.x - 20), 5, Random.Range(mesh.bounds.min.z + 20, mesh.bounds.max.z - 20));
     }
 
     public void AllCout()
     {
-        check = false;
+    
         AllSpawnPos = new Vector3[CoutEnemy];
-        for (int i = 0; i <= CoutEnemy; i++)
+        for (int i = 0; i <= CoutEnemy-1; i++)
         {
             AllSpawnPos[i] = SpawnPos;
             for (int g = 0; g <= i; g++)
             {
                 if (AllSpawnPos[g] == SpawnPos || (AllSpawnPos[g].x - SpawnPos.x == 0 && AllSpawnPos[g].z - SpawnPos.z == 0))
                 {
+                    Debug.Log("1");
                     spawnpos();
                 }
             }

@@ -2386,7 +2386,7 @@ GameObject:
   - component: {fileID: 1630957029}
   - component: {fileID: 1630957030}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: Ground2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2486,8 +2486,10 @@ MonoBehaviour:
   enemyOnMap: []
   Loc: {fileID: 2075813487}
   SpawnPos: {x: 0, y: 0, z: 0}
+  mesh: {fileID: 0}
   CoutEnemy: 5
   AllSpawnPos: []
+  well: []
 --- !u!1 &1672285086
 GameObject:
   m_ObjectHideFlags: 0
@@ -2561,7 +2563,7 @@ GameObject:
   - component: {fileID: 1677096999}
   - component: {fileID: 1677097002}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: Ground3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2661,8 +2663,10 @@ MonoBehaviour:
   enemyOnMap: []
   Loc: {fileID: 2106207200}
   SpawnPos: {x: 0, y: 0, z: 0}
+  mesh: {fileID: 0}
   CoutEnemy: 0
   AllSpawnPos: []
+  well: []
 --- !u!1 &1677194344
 GameObject:
   m_ObjectHideFlags: 0
@@ -3110,7 +3114,7 @@ GameObject:
   - component: {fileID: 1996564756}
   - component: {fileID: 1996564760}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: Ground1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3210,9 +3214,11 @@ MonoBehaviour:
   enemyOnMap: []
   Loc: {fileID: 364022288}
   SpawnPos: {x: 0, y: 0, z: 0}
+  mesh: {fileID: 1996564756}
   CoutEnemy: 0
   AllSpawnPos:
   - {x: 0, y: 0, z: 0}
+  well: []
 --- !u!1 &2016691791
 GameObject:
   m_ObjectHideFlags: 0

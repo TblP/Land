@@ -24,8 +24,10 @@ public class TransferLoc : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("123");
             Loc.SetActive(true);
             spawnManager.CoutEnemy = Random.Range(1,5);
+            //spawnManager.mesh = GetComponent<MeshCollider>();
             spawnManager.AllCout();
         }
     }
