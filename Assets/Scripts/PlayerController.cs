@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool checkfight = false;
     public Joystick joystick;
     public Rigidbody player;
     public float horizontalInput;
@@ -22,4 +24,5 @@ public class PlayerController : MonoBehaviour
         horizontalInput = joystick.Horizontal;
         player.velocity = new Vector3(joystick.Horizontal * speed, player.velocity.z, joystick.Vertical * speed);
     }
+    
 }
